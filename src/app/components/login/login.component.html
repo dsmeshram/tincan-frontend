@@ -1,0 +1,39 @@
+
+<div class="login-div">
+ <header class="header">
+         <div class="container">
+            <a class="log">tinCan<span class="text-primary">.</span></a>
+         </div>
+      </header>
+   
+<form [formGroup]="loginForm" >
+
+
+   <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email"  formControlName="username">
+    <mat-icon matSuffix>supervised_user_circle</mat-icon>
+    <mat-hint>Enter your Email address</mat-hint>
+  </mat-form-field>
+  <a routerLink="/forgot" routerLinkActive="active" class="forgotlink">Forgot password?</a>
+  
+
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="Password" type="password" formControlName="password">
+    <mat-icon matSuffix>vpn_key</mat-icon>
+    <mat-hint>Enter your Password</mat-hint>
+  </mat-form-field>
+
+      
+   <button type="submit" color="primary" mat-raised-button (click) = "onlogin()" class="signinButton">Sign in</button>
+
+<p> 
+New to tinCan? <a routerLink="/register" routerLinkActive="active">Create an account.</a>
+ </p>
+
+
+ 
+</form>
+
+</div>

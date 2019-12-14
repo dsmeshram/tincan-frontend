@@ -1,0 +1,73 @@
+
+<mat-horizontal-stepper  [linear]="isLinear" #stepper >
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Meta info of <b>{{app.appname}}</b></ng-template>
+      <div>
+     
+      <img src="{{appmetadata.icon}}" class="applogo"/>
+      </div>
+      <p>
+        title : {{appmetadata.title}}
+      </p>
+      <p>
+        descriptionHTML : {{appmetadata.descriptionHTML}}
+      </p>
+      <p>
+        installs : {{appmetadata.installs}}
+      </p>
+      <p>
+        scoreText : {{appmetadata.scoreText}}
+      </p>
+       <p>
+        ratings : {{appmetadata.ratings}}
+      </p>
+      <p>
+        reviews : {{appmetadata.reviews}}
+      </p>
+      <p>
+        genre : {{appmetadata.genre}}
+      </p>
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>In depth of Application</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Market reviews</ng-template>
+    <mat-list stype="max-height: 600px;overflow: auto;">
+      <mat-list-item *ngFor="let review of appreviews" class="item">
+        <mat-card class="review-card">
+          <mat-card-header>
+              <img mat-card-avatar src="{{review.userImage}}" class="example-header-image"/>
+              <mat-card-title>{{review.userName}}</mat-card-title>
+              <mat-card-subtitle>{{review.score}} {{review.date}}</mat-card-subtitle>
+             
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{review.text}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

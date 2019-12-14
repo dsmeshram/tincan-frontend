@@ -1,0 +1,59 @@
+
+<mat-drawer-container  class="maincontainer">
+
+   <mat-drawer  #drawer  mode="side"  class="drawerpanel" opened>
+   
+      <div class="appspanel">
+      
+         <mat-list>
+            <h3 mat-subheader><div>
+      <header class="header">
+         <div class="container">
+            <a class="log">tinCan<span class="text-primary">.</span></a>
+         </div>
+      </header>
+      </div></h3>
+      <h3 mat-subheader>Applications</h3>
+            <mat-list-item  *ngFor="let app of apps" (click)="onApplicationCLick(app)" >
+            <mat-icon class="appmenu" aria-hidden="false" aria-label="Example delete icon" [matMenuTriggerFor]="appOption">android</mat-icon>
+            <p class="appnamelabel">
+              {{app.appname | titlecase}}
+            </p>
+            
+            <mat-menu #appOption="matMenu">
+               <button mat-menu-item (click)="opneinfodialog(app)">Information</button>
+               <button mat-menu-item (click)="onAppDelete(app)">Delete</button>
+            </mat-menu>
+            <mat-icon class="appmenu" aria-hidden="false" aria-label="Example delete icon" [matMenuTriggerFor]="appOption">more_vert</mat-icon>
+           
+            </mat-list-item>
+         </mat-list>
+      </div>
+   </mat-drawer>
+   <mat-drawer-content>
+   <mat-toolbar>
+   <mat-toolbar-row>
+      
+      <span class="example-spacer"></span>
+      <mat-menu #afterMenu="matMenu" xPosition="after">
+         <button mat-menu-item (click)="onRegisterAppClick(Android)">
+         <span>Android application</span>
+         </button>
+         <button mat-menu-item disabled>
+         <span>iOS application</span>
+         </button>
+         <button mat-menu-item disabled>
+         <span>JS Applications</span>
+         </button>
+      </mat-menu>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon" [matMenuTriggerFor]="afterMenu">add</mat-icon>
+      <mat-menu #appMenu="matMenu">
+         <button mat-menu-item>Settings</button>
+         <button mat-menu-item (click)="onLogout()">Log out</button>
+      </mat-menu>
+      <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon" [matMenuTriggerFor]="appMenu">more_vert</mat-icon>
+   </mat-toolbar-row>
+</mat-toolbar>
+      <router-outlet></router-outlet>
+   </mat-drawer-content>
+</mat-drawer-container>

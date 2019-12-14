@@ -1,0 +1,4 @@
+{
+    "serverUrl": "localhost:1234/tincan",
+    "login": "/userlogin"
+  }

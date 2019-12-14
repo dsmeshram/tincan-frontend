@@ -1,0 +1,39 @@
+.applogo{
+    height: 60px;
+    width: 60px;
+}
+
+.useravatar{
+    height: 60px;
+    width: 60px;
+}
+
+.review-card {
+    max-width: 400px;
+    max-height: 400px;
+  }
+.item{
+    max-height: 400px;
+}
+
+.mat-list-item {
+    height: auto;
+    padding: 4px;
+  }
+
+  .appavatar{
+    border-radius: 15% !important;
+  }
+
+  .detail-card{
+      margin: 5px;
+  }
+
+  .appdetailparent{
+    height:100%;
+    width:100%;
+    padding: 10px;
+    overflow: scroll;
+    margin: 5px;
+  }
+

@@ -1,0 +1,44 @@
+<mat-grid-list cols="2">
+  <mat-grid-tile>
+  <div class="appdetailparent">
+  <h3 mat-subheader>Application overview</h3>
+
+  <mat-card-header>
+    
+    <mat-card-title>{{appmetadata.title}}</mat-card-title>
+    <mat-card-subtitle>{{appmetadata.ratings}}</mat-card-subtitle>
+  </mat-card-header>
+<div [innerHTML]="appmetadata.descriptionHTML" >
+            <button onclick="showmorehidemore()" id="myBtn">Read more</button>
+      </div>
+      <p>
+        installs : {{appmetadata.installs}}
+      </p>
+
+  </div>
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+<div class="appdetailparent">
+<h3 mat-subheader>Review overview</h3>
+     <mat-list stype="max-height: 600px;overflow: auto;">
+      <mat-list-item *ngFor="let review of appreviews" class="item">
+        <mat-card class="review-card">
+          <mat-card-header>
+              <img mat-card-avatar src="{{review.userImage}}" class="example-header-image"/>
+              <mat-card-title>{{review.userName}}</mat-card-title>
+              <mat-card-subtitle>{{review.score}} {{review.date}}</mat-card-subtitle>
+             
+          </mat-card-header>
+          <mat-card-content>
+            <p>
+              {{review.text}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-list-item>
+    </mat-list>
+     </div>
+  </mat-grid-tile>
+ 
+</mat-grid-list>

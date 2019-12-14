@@ -1,0 +1,10 @@
+<h6 mat-dialog-title>Delete message</h6>
+<div mat-dialog-content>
+  <p><b>{{appname}} application will be deleted from your account. do you want to Delete?
+</b></p>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="" (click)="onNoClick()">No Thanks</button>
+  <button mat-button  (click)="onDeleteClick()" cdkFocusInitial>Ok</button>
+</div>

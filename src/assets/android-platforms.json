@@ -1,0 +1,77 @@
+[
+    {
+      "chart": "//chart.googleapis.com/chart?chf=bg%2Cs%2C00000000&chd=t%3A0.3%2C0.3%2C3.2%2C6.9%2C14.5%2C16.9%2C19.2%2C28.3%2C10.4&chco=c4df9b%2C6fad0c&chl=Gingerbread%7CIce%20Cream%20Sandwich%7CJelly%20Bean%7CKitKat%7CLollipop%7CMarshmallow%7CNougat%7COreo%7CPie&cht=p&chs=500x250",
+      "data": [
+        {
+          "api": 10,
+          "name": "Gingerbread",
+          "perc": "0.3"
+        },
+        {
+          "api": 15,
+          "name": "Ice Cream Sandwich",
+          "perc": "0.3"
+        },
+        {
+          "api": 16,
+          "name": "Jelly Bean",
+          "perc": "1.2"
+        },
+        {
+          "api": 17,
+          "name": "Jelly Bean",
+          "perc": "1.5"
+        },
+        {
+          "api": 18,
+          "name": "Jelly Bean",
+          "perc": "0.5"
+        },
+        {
+          "api": 19,
+          "name": "KitKat",
+          "perc": "6.9"
+        },
+        {
+          "api": 21,
+          "name": "Lollipop",
+          "perc": "3.0"
+        },
+        {
+          "api": 22,
+          "name": "Lollipop",
+          "perc": "11.5"
+        },
+        {
+          "api": 23,
+          "name": "Marshmallow",
+          "perc": "16.9"
+        },
+        {
+          "api": 24,
+          "name": "Nougat",
+          "perc": "11.4"
+        },
+        {
+          "api": 25,
+          "name": "Nougat",
+          "perc": "7.8"
+        },
+        {
+          "api": 26,
+          "name": "Oreo",
+          "perc": "12.9"
+        },
+        {
+          "api": 27,
+          "name": "Oreo",
+          "perc": "15.4"
+        },
+        {
+          "api": 28,
+          "name": "Pie",
+          "perc": "10.4"
+        }
+      ]
+    }
+  ]

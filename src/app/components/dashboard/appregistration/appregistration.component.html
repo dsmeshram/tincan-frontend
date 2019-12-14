@@ -1,0 +1,67 @@
+
+<h3 class="addnewTitle">Add tinCan to your Android app</h3>
+
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="registrationform">
+    <form [formGroup]="registrationform">
+    <ng-template matStepLabel>Register app</ng-template>
+<p>
+   <mat-form-field appearance="outline">
+    <mat-label>App nick name</mat-label>
+    <input matInput placeholder="Project Name" required  formControlName="projectname">
+    <mat-hint>Enter your application nick name</mat-hint>
+  </mat-form-field>
+</p>
+<p>
+   <mat-form-field appearance="outline">
+    <mat-label>Android package name</mat-label>
+    <input matInput placeholder="com.open.sample" required formControlName="packagename">
+    <mat-hint>Enter your Android package name</mat-hint>
+
+    <mat-error *ngIf="isexist">
+      already available!
+    </mat-error>
+  </mat-form-field>
+</p>
+
+<p>
+   <mat-form-field appearance="outline">
+    <mat-label>Debug signin certification SHA-1</mat-label>
+    <input matInput placeholder="SHA-1 Signature"  formControlName="signature">
+    <mat-hint>Enter your debug signin SH1-1 certification key</mat-hint>
+  </mat-form-field>
+</p>
+
+<p>
+
+  <button type="submit" color="primary" (click)="onRegisterApp()" mat-raised-button class="registrationbutton">Register app</button>
+      
+  </p>
+</form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" [optional]="isOptional">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Application configuration</ng-template>
+     
+    <div>
+      <h5>Application api key</h5>
+      <div>
+      <mat-form-field appearance="outline">
+    <mat-label>API key</mat-label>
+    <input matInput  #apikey formControlName="apikey">
+    <mat-hint>Application api key</mat-hint>
+    <mat-icon matSuffix (click)="copyApiKey()">file_copy</mat-icon>
+  </mat-form-field>
+  <p>App above key in your tinCan sdk initialized</p>
+  </div>
+    </div>
+      <div>
+       <button type="submit" color="primary" (click)="onCancel()" mat-raised-button class="registrationbutton">Finish</button>
+  
+      </div>
+    </form>
+  </mat-step>
+  
+</mat-horizontal-stepper>
+
