@@ -5,6 +5,7 @@ import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-appdoverview',
   templateUrl: './appdoverview.component.html',
@@ -29,7 +30,8 @@ export class AppdoverviewComponent implements OnInit,AfterViewInit {
     this.secondFormGroup = this._formBuilder.group({
       secondCtrl: ['', Validators.required]
     });
-    this.packagename =  "com.hurix.kitaboo.cloudreader";
+
+    this.packagename =  "com.linkedin.android.lite";
       this.config.getAppMetaData(this.packagename).subscribe(response=>{
         this.appmetadata = response;
       });

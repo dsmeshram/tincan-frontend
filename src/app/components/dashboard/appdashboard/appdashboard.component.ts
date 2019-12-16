@@ -32,7 +32,6 @@ export class AppdashboardComponent implements OnInit {
     
   }
   
-
   getRandomColor2() {
     var length = 6;
     var chars = '0123456789ABCDEF';

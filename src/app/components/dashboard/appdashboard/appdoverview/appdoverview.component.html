@@ -4,15 +4,18 @@
   <h3 mat-subheader>Application overview</h3>
 
   <mat-card-header>
-    
+    <img src="{{appmetadata.icon}}" mat-card-avatar/>
     <mat-card-title>{{appmetadata.title}}</mat-card-title>
-    <mat-card-subtitle>{{appmetadata.ratings}}</mat-card-subtitle>
+    <mat-card-subtitle>ratings: {{appmetadata.ratings}}</mat-card-subtitle>
   </mat-card-header>
 <div [innerHTML]="appmetadata.descriptionHTML" >
-            <button onclick="showmorehidemore()" id="myBtn">Read more</button>
       </div>
       <p>
         installs : {{appmetadata.installs}}
+      </p>
+
+       <p>
+       <canvas id="apphisto" width="20" height="20"></canvas>
       </p>
 
   </div>
@@ -21,7 +24,7 @@
 
 <div class="appdetailparent">
 <h3 mat-subheader>Review overview</h3>
-     <mat-list stype="max-height: 600px;overflow: auto;">
+     <mat-list >
       <mat-list-item *ngFor="let review of appreviews" class="item">
         <mat-card class="review-card">
           <mat-card-header>
