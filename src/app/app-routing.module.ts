@@ -19,7 +19,7 @@ const routes: Routes = [
         path : 'noapp',
         component : NoappsComponent
     },{
-      path: 'appoverview',
+      path: 'appoverview/:packagename',
       component : AppdoverviewComponent
     }
     ]

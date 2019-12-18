@@ -19,7 +19,19 @@ export class AppdoverviewComponent implements OnInit,AfterViewInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   constructor(private _formBuilder: FormBuilder,public dialog: MatDialog,private route: ActivatedRoute,private config: ConfigService,private router: Router) { 
-   
+    this.route.params.subscribe( 
+      params => {
+        this.packagename =  params.packagename;
+        this.config.getAppMetaData(this.packagename).subscribe(response=>{
+          this.appmetadata = response;
+        });
+    
+        this.config.getAppReviews(this.packagename).subscribe(response=>{
+          this.appreviews = response;
+        });
+      }
+      
+    );
   }
 
   ngOnInit() {
@@ -31,14 +43,7 @@ export class AppdoverviewComponent implements OnInit,AfterViewInit {
       secondCtrl: ['', Validators.required]
     });
 
-    this.packagename =  "com.linkedin.android.lite";
-      this.config.getAppMetaData(this.packagename).subscribe(response=>{
-        this.appmetadata = response;
-      });
-  
-      this.config.getAppReviews(this.packagename).subscribe(response=>{
-        this.appreviews = response;
-      });
+   
   }
 
   ngAfterViewInit(){

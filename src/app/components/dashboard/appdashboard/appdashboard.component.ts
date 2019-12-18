@@ -82,7 +82,8 @@ export class AppdashboardComponent implements OnInit {
     if(this.apps.length == 0){
       this.router.navigateByUrl("apphome/noapp");
     }else{
-      this.router.navigateByUrl("apphome/appoverview");
+      this.router.navigate(['apphome/appoverview',  this.apps[0].packagename]);
+   
     }
   }
 
@@ -91,11 +92,10 @@ export class AppdashboardComponent implements OnInit {
   }
 
   onApplicationCLick(app) {
-    this.config.selectedpackagename =app.packagename;
-    //  this.router.navigateByUrl("apphome/appoverview/"+app.packagename);
+    //this.config.selectedpackagename =app.packagename;
+    this.router.navigate(["apphome/appoverview",app.packagename]);
 
-    //this.router.navigate(['appoverview'], { queryParams: { packagename: app.packagename } });
-       
+        
   }
 
   onAppDelete(app){
